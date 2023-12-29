@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "OpenAI Deeplink",
+  "version": "1.0.0",
+  "description": "Allows input to ChatGPT through the URL.",
+  "permissions": ["storage"],
+  "browser_action": {
+    "default_icon": {
+      "16": "/img/icon16.png",
+      "48": "/img/icon48.png",
+      "128": "/img/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://chat.openai.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
