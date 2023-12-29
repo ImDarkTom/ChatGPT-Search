@@ -1,12 +1,4 @@
-let delay = "500";
-
-browser.storage.sync.get('delay').then(result => {
-    if (result.delay) {
-        delay = result.delay;
-    }
-});
-
-delay = parseInt(delay);
+let delay = 500;
 
 let hasExecuted = false;
 
@@ -17,8 +9,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
 
     for (let mutation of mutationsList) {
         if (mutation.type === 'childList') {
-            const url = window.location.href;
-            const urlParams = new URLSearchParams(new URL(url).search);
+            const urlParams = new URLSearchParams(document.location.search);
             const query = urlParams.get('query');
 
             if (query) {
@@ -28,8 +19,7 @@ const observer = new MutationObserver((mutationsList, observer) => {
                     const button = textarea.nextElementSibling;
 
                     if (button && button.nodeName === 'BUTTON') {
-                        observer.disconnect(); // Disconnect observer
-
+                        observer.disconnect();
                         hasExecuted = true;
 
                         setTimeout(() => {
