@@ -1,47 +1,61 @@
 let delay = 500;
 
-let hasExecuted = false;
+const initObserver = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const query = urlParams.get('query');
 
-const observer = new MutationObserver((mutationsList, observer) => {
-    if (hasExecuted) {
+    if (!query) {
+        console.log('ChatGPT Deeplink: No query found.');
         return;
     }
 
-    for (let mutation of mutationsList) {
-        if (mutation.type === 'childList') {
-            const urlParams = new URLSearchParams(document.location.search);
-            const query = urlParams.get('query');
+    const textarea = document.getElementById('prompt-textarea');
+    if (!textarea) {
+        console.error('ChatGPT Deeplink: Input textarea not found.');
+        return;
+    }
 
-            if (query) {
-                const textarea = document.getElementById('prompt-textarea');
-
-                if (textarea) {
-                    const button = textarea.nextElementSibling;
-
-                    if (button && button.nodeName === 'BUTTON') {
-                        observer.disconnect();
-                        hasExecuted = true;
-
-                        setTimeout(() => {
-                            textarea.focus();
-                            // Simulate typing the word character by character
-                            for (let i = 0; i < query.length; i++) {
-                                const char = query.charAt(i);
-
-                                // Set the value of the textarea
-                                textarea.value += char;
-
-                                // Dispatch an input event
-                                textarea.dispatchEvent(new Event("input", { bubbles: true }));
-                            }
-                            textarea.blur();
-                            button.click();
-                        }, delay);
+    const observer = new MutationObserver((mutationsList, observer) => {
+        for (let mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                //Odd workaround
+                let sendButton = null;
+                const allButtons = document.querySelectorAll('button');
+                for (const button of allButtons) {
+                    if (button.firstChild.classList.contains('icon-2xl')) {
+                        sendButton = button;
+                        break;
                     }
+                }
+
+                if (sendButton && sendButton.nodeName === 'BUTTON') {
+                    observer.disconnect();
+
+                    setTimeout(() => {
+                        textarea.focus();
+                        // Simulate typing the word character by character
+                        for (let i = 0; i < query.length; i++) {
+                            const char = query.charAt(i);
+
+                            textarea.value += char;
+
+                            textarea.dispatchEvent(new Event("input", { bubbles: true }));
+                        }
+                        textarea.blur();
+                        sendButton.click();
+                    }, delay);
+                } else {
+                    console.error('ChatGPT Deeplink: Send button not found.')
                 }
             }
         }
-    }
-});
+    });
 
-observer.observe(document, { childList: true, subtree: true });
+    observer.observe(document.body, { childList: true, subtree: true });
+};
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initObserver);
+} else {
+    initObserver();
+}
