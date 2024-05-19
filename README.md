@@ -11,5 +11,5 @@ Available on [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon
 
 ## Explanation
 - On installation (or on extension icon click) opens a tab that allows adding 'ChatGPT' as a search engine, letting you make queries from the address bar.
-- When the search is made the browser goes to the ChatGPT url with the 'query' url parameter e.g: https://chat.openai.com/?query=What+is+the+capital+of+France%3F.
+- When the search is made the browser goes to the ChatGPT url with the 'query' url parameter e.g: https://chatgpt.com/?query=What+is+the+capital+of+France%3F
 - The addon then takes this query and automatically enters it into the text box and presses send. 
