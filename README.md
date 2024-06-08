@@ -3,7 +3,7 @@ A Firefox extension that allows using ChatGPT from the search bar as a custom se
 
 ![](https://repository-images.githubusercontent.com/736818816/1802e548-04a6-436c-9704-674cc06046bc)
 
-Available on [addons.mozilla.org](https://addons.mozilla.org/en-US/firefox/addon/chatgpt-deeplink/)
+### Available at: https://addons.mozilla.org/en-US/firefox/addon/chatgpt-deeplink/
 
 ![](https://raw.githubusercontent.com/ImDarkTom/ChatGPT-Search/main/preview.png)
 
