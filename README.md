@@ -1,5 +1,5 @@
 # ChatGPT Search/Deeplink
-[**⬇️ Download at addons.mozilla.og**](https://addons.mozilla.org/en-US/firefox/addon/chatgpt-deeplink/)
+[**⬇️ Download at addons.mozilla.org**](https://addons.mozilla.org/en-US/firefox/addon/chatgpt-deeplink/)
 
 A Firefox extension that allows you to use ChatGPT as a search engine from your address bar.
 
