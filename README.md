@@ -1,21 +1,22 @@
-# ChatGPT-Search/Deeplink
-A Firefox extension that allows using ChatGPT from the search bar as a custom search engine
+# ChatGPT Search/Deeplink
+[**⬇️ Download at addons.mozilla.og**](https://addons.mozilla.org/en-US/firefox/addon/chatgpt-deeplink/)
 
-![](https://repository-images.githubusercontent.com/736818816/1802e548-04a6-436c-9704-674cc06046bc)
+A Firefox extension that allows you to use ChatGPT as a search engine from your address bar.
 
-### Available at: https://addons.mozilla.org/en-US/firefox/addon/chatgpt-deeplink/
+![Banner Image](https://repository-images.githubusercontent.com/736818816/1802e548-04a6-436c-9704-674cc06046bc)
 
-![](https://raw.githubusercontent.com/ImDarkTom/ChatGPT-Search/main/preview.png)
+_*Not affiliated with OpenAI or ChatGPT_
 
 ## Features
-- Use ChatGPT from the address bar.
-- URL parameters for chat.openai.com.
+- Adds ChatGPT as a search engine to Firefox.
+- Allows ChatGPT to parse query from URL parameters.
 
-## Explanation
-- On installation (or on extension icon click) opens a tab that allows adding 'ChatGPT' as a search engine, letting you make queries from the address bar.
-- When the search is made the browser goes to the ChatGPT url with the 'query' url parameter e.g: https://chatgpt.com/?query=What+is+the+capital+of+France%3F
-- The addon then takes this query and automatically enters it into the text box and presses send. 
+![Search Preview](https://raw.githubusercontent.com/ImDarkTom/ChatGPT-Search/main/preview.png)
+
+## Guide
+- After installing, a page will be opened that lets you add ChatGPT to Firefox's list of search engines.
+- You can add keywords to this search engine such as `@chatgpt` or `@gpt` for ease of use.
 
 ## FAQ
-- **Q**: Is there be a chromium version of this extension?
-- **A**: I do not plan on making/maintaining a version for chromium browsers. You are free to create a chromium fork if you wish.
+- **Q**: Is there a version for Chrome/Chromium?
+- **A**: OpenAI maintains their own official extension for chromium [here](https://chromewebstore.google.com/detail/chatgpt-search/ejcfepkfckglbgocfkanmcdngdijcgld). 
