@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
   "name": "ChatGPT Deeplink",
-  "version": "1.0.2",
-  "description": "Allows input to ChatGPT through the URL.",
+  "version": "1.0.3",
+  "description": "Allows you to use ChatGPT as a search engine.",
   "permissions": ["tabs"],
   "background": {
     "scripts": ["background.js"],
